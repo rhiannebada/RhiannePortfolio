@@ -1,0 +1,123 @@
+body {
+    margin: 50px;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: "Marcellus", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-image: url("pages/images/bg1.png");
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.intro img {
+    margin-bottom: 10px;
+    margin-left: -15px;
+    margin-right: 10px;
+    margin-top: -5px;
+    float: left;
+    width: 15%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+}
+
+.intro h1 {
+    font-family: "Fredericka the Great", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: justify;
+}
+
+.intro p{
+    text-align: left;
+}
+
+.service p {
+    text-align: left;
+}
+
+nav { /*style navigation section*/
+    position: fixed; /*makes the navigation bar fixed; non scrollable*/
+    background-color: #da9999; /*background color*/
+    top: 0; /*aligns to top*/
+    left: 0; /*aligns to left*/
+    width: 100%; /*cover entire width*/
+    z-index: 1000; /*ensures nav bar is above other contents*/
+    padding: 10px 0; /*adds padding*/
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0; /*removes default margin*/
+    padding: 0; /*removes default padding*/
+    background-color: #da9999; /*background color*/
+  }
+  
+nav ul li {
+    float: left; /*float list items to left*/
+    position: relative; /* ensures the dropdown is positioned correctly */
+  }
+  
+nav ul li a {
+    display: block; /*displays links as block elements*/
+    color: white; 
+    text-align: left; /*aligns text to the left*/
+    padding: 10px 40px;
+    text-decoration: none; /*removes underline*/
+  }
+
+nav ul li a:hover {
+    background-color: #333;
+    border-radius: 10px;
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.service {
+    flex-basis: calc(33.33% - 20px);
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.service figure img {
+    margin-bottom: 10px;
+    margin-left: -50px;
+    width: 150px;
+    display: block;
+}
+
+h3, p {
+    text-align: center;
+}
+
+.buttons {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+button {
+    background-color: #da9999;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 15px;
+    font-family: "Marcellus", serif;
+}
+
+button:hover {
+    background-color: #333;
+}
+
