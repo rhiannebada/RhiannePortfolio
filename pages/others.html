@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gallery.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Buda:wght@300&family=Explora&family=Felipa&family=Fredericka+the+Great&family=Heebo:wght@100..900&family=Marcellus&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
-    
+
     <header>
-        <nav>
+        <nav class="navbar">
             <ul>
-                <li><a href="home.html">Home</a></li>
+                <div class="home">
+                <li><a href="index.html">Home</a></li>
+                </div>
                 <li><a href="graphicdesign.html">Graphic Design</a></li>
                 <li><a href="illustration.html">Illustration</a></li>
                 <li><a href="photography.html">Photography</a></li>
@@ -22,5 +26,52 @@
         </nav>
     </header>
 
+    <br>
+    <br>
+    <br>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <video controls>
+                <source src="images/vid1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="gallery-item">
+            <video controls>
+                <source src="images/vid.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+         </div>
+
+        <div class="gallery-item">
+            <source src="images/vid3.mp4" type="video/mp4" alt="Video 3">
+            <div class="caption">Promotional Video</div>
+        </div>
+
+        <div class="gallery-item">
+            <source src="images/vid4.mp4" type="video/mp4" alt="Video 4">
+            <div class="caption">Non-Linear Interactive Storytelling</div>
+        </div>
+
+        <div class="gallery-item">
+            <source src="images/vid5.mp4" type="video/mp4" alt="Video 5">
+            <div class="caption">Vlog</div>
+        </div>
+
+        <div class="gallery-item">
+            <source src="images/vid6.mp4" type="video/mp4" alt="Video 6">
+            <div class="caption">Chandelier Design</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/trophy.jpeg" alt="Image 1">
+            <div class="caption">Trophy Design</div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
