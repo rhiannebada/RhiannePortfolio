@@ -1,5 +1,3 @@
-// script.js
-
 document.addEventListener("DOMContentLoaded", () => {
     const items = document.querySelectorAll('.gallery-item');
 
@@ -42,4 +40,3 @@ $('.tile')
         // set up a background image for each tile based on data-image attribute
         .children('.photo').css({'background-image': 'url('+ $(this).attr('data-image') +')'});
     })
-
