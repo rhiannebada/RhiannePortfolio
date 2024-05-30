@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="css/graphicdesign.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Buda:wght@300&family=Explora&family=Felipa&family=Fredericka+the+Great&family=Heebo:wght@100..900&family=Marcellus&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 <style>
     body {
-    background-color: #000000;
+    background: #da9999;
     color: #ffffff;
     font-family: "Marcellus", serif;
     font-weight: 400;
     font-style: normal;
-    background-image: url("images/bg1.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -23,6 +23,28 @@
     align-items: center;
     min-height: 100vh;
     margin: 0;
+}
+
+@font-face {
+    font-family: 'Voyage';
+    src: url('../fonts/Voyage-regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Voyage', serif;
+}
+
+.page a {
+    color: rgb(20, 91, 138);
+}
+
+.page a:hover {
+    background-color: #da9999;
 }
 
 .gallery {
@@ -67,7 +89,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(218, 153, 153); /* Semi-transparent background */
+    background-color: rgb(20, 91, 138); /* Semi-transparent background */
     color: white;
     padding: 10px;
     box-sizing: border-box;
@@ -98,40 +120,79 @@
     }
 }
 
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-nav { /*style navigation section*/
-    position: fixed; /*makes the navigation bar fixed; non scrollable*/
-    background-color: #1f1f1f; /*background color*/
-    top: 0; /*aligns to top*/
-    left: 0; /*aligns to left*/
-    width: 100%; /*cover entire width*/
-    z-index: 1000; /*ensures nav bar is above other contents*/
-    padding: 10px 0; /*adds padding*/
+.nav-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav ul {
     list-style-type: none;
-    margin: 0; /*removes default margin*/
-    padding: 0; /*removes default padding*/
-    background-color: #333; /*background color*/
-  }
-  
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
 nav ul li {
-    float: left; /*float list items to left*/
-    position: relative; /* ensures the dropdown is positioned correctly */
-  }
-  
+    margin: 0 10px;
+}
+
 nav ul li a {
-    display: block; /*displays links as block elements*/
-    color: white; 
-    text-align: left; /*aligns text to the left*/
-    padding: 10px 40px;
-    text-decoration: none; /*removes underline*/
-  }
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.5vw;
+}
 
 nav ul li a:hover {
-    background-color: #da9999;
-    border-radius: 10px;
+    background-color: rgb(20, 91, 138, 0.5);
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+    }
+
+    .nav-left,
+    .nav-right {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgb(20, 91, 138, 0.5);
+    }
+
+    .nav-left.active,
+    .nav-right.active {
+        display: flex;
+    }
+
+    .nav-left li,
+    .nav-right li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-icon {
+        display: block;
+        color: white;
+        margin-left: 10px;
+    }
 }
 </style>
 
@@ -140,15 +201,18 @@ nav ul li a:hover {
 <body>
 
     <header>
-        <nav class="navbar">
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="graphicdesign.html">Graphic Design</a></li>
-                <li><a href="illustration.html">Illustration</a></li>
-                <li><a href="photography.html">Photography</a></li>
-                <li><a href="others.html">Other Works</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
+        <nav>
+            <div class="nav-container">
+                <div class="menu-icon" id="menu-icon">☰</div>
+                <ul class="nav-left" id="nav-left">
+                    <li><a href="home.html">Home</a></li>
+                    <li class="page"><a href="#">Graphic Design</a></li>
+                </ul>
+                <ul class="nav-right" id="nav-right">
+                    <li><a href="others.html">Works</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
@@ -216,7 +280,10 @@ nav ul li a:hover {
             <img src="images/gd12.jpg" alt="Image 6">
             <div class="caption">Brochure Cover</div>
         </div>
+        
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/script2.js"></script>
+
 </body>
 </html>
