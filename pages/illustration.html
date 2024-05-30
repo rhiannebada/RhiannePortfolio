@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="css/gallery.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Buda:wght@300&family=Explora&family=Felipa&family=Fredericka+the+Great&family=Heebo:wght@100..900&family=Marcellus&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
@@ -12,14 +12,17 @@
 
     <header>
         <nav>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="graphicdesign.html">Graphic Design</a></li>
-                <li><a href="illustration.html">Illustration</a></li>
-                <li><a href="photography.html">Photography</a></li>
-                <li><a href="others.html">Other Works</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
+            <div class="nav-container">
+                <div class="menu-icon" id="menu-icon">☰</div>
+                <ul class="nav-left" id="nav-left">
+                    <li><a href="home.html">Home</a></li>
+                    <li class="page"><a href="#">Illustration</a></li>
+                </ul>
+                <ul class="nav-right" id="nav-right">
+                    <li><a href="others.html">Works</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
@@ -109,6 +112,8 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/script2.js"></script>
+
 </body>
 </html>
