@@ -1,57 +1,52 @@
 body {
     margin: 50px;
-    background-color: #000000;
+    background-color: #464646;
     color: #ffffff;
-    font-family: "Marcellus", serif;
-    font-weight: 400;
-    font-style: normal;
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;    
     background-size: auto;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .intro img {
-    margin-bottom: 10px;
-    margin-left: -15px;
-    margin-right: 10px;
-    margin-top: -5px;
-    float: left;
-    width: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -50px;
+    width: 40%;
     height: auto;
     max-width: 100%;
     display: block;
 }
 
 .intro h1 {
-    font-family: "Fredericka the Great", serif;
-    font-weight: 400;
-    font-style: normal;
-    text-align: justify;
+    font-family: "Walter Turncoat", cursive;
+    font-weight: 500;    
+    text-align: center;
+    font-size: 250%;
 }
 
-.intro p{
-    text-align: left;
+h3 {
+    font-family: "Walter Turncoat", cursive;
 }
 
-.service p {
-    text-align: left;
-}
+* {color: #ffffff; text-decoration: none;}
 
 nav { /*style navigation section*/
     position: fixed; /*makes the navigation bar fixed; non scrollable*/
-    background-color: #da9999; /*background color*/
     top: 0; /*aligns to top*/
     left: 0; /*aligns to left*/
     width: 100%; /*cover entire width*/
     z-index: 1000; /*ensures nav bar is above other contents*/
     padding: 10px 0; /*adds padding*/
+    background-color: rgba(0,0,0,.5);
 }
 
 nav ul {
     list-style-type: none;
     margin: 0; /*removes default margin*/
     padding: 0; /*removes default padding*/
-    background-color: #da9999; /*background color*/
+    background-color: rgba(0,0,0,.5);
   }
   
 nav ul li {
@@ -67,35 +62,49 @@ nav ul li a {
     text-decoration: none; /*removes underline*/
   }
 
-nav ul li a:hover {
-    background-color: #333;
-    border-radius: 10px;
+  nav ul li a:hover {
+    background-color: #da9999;
+    border-radius: 5px;
 }
 
-.services {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+/* Mobile Styles */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-icon {
+        display: block;
+    }
 }
 
 
-.service {
-    flex-basis: calc(33.33% - 20px);
-    margin: 10px;
-    padding: 5px;
+h3, h4, p {
     text-align: center;
-    box-sizing: border-box;
 }
 
-.service figure img {
-    margin-bottom: 10px;
-    margin-left: -50px;
-    width: 150px;
-    display: block;
-}
-
-h3, p {
-    text-align: center;
+h4 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
 }
 
 .buttons {
@@ -113,9 +122,23 @@ button {
     padding: 10px;
     margin: 10px;
     border-radius: 15px;
-    font-family: "Marcellus", serif;
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
 }
 
 button:hover {
     background-color: #333;
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+button:hover {
+    animation: zoom 0.3s forwards;
 }
