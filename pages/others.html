@@ -1,70 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="gallery.css">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Buda:wght@300&family=Explora&family=Felipa&family=Fredericka+the+Great&family=Heebo:wght@100..900&family=Marcellus&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-</head>
-
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Works Page</title>
+    <link rel="stylesheet" href="css/pages.css"/>
+    <link href="https://dafontfile.org/voyage-typeface/" ref="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+  </head>
+  <body>
 
     <header>
-        <nav class="navbar">
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="graphicdesign.html">Graphic Design</a></li>
-                <li><a href="illustration.html">Illustration</a></li>
-                <li><a href="photography.html">Photography</a></li>
-                <li><a href="others.html">Other Works</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
+        <nav>
+            <div class="nav-container">
+                <div class="menu-icon" id="menu-icon">☰</div>
+                <ul class="nav-left" id="nav-left">
+                    <li><a href="home.html">Home</a></li>
+                </ul>
+                <ul class="nav-right" id="nav-right">
+                    <li><a href="others.html">Other Works</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
-    <br>
-    <br>
-    <br>
-
-    <div class="gallery">
-        <div class="gallery-item">
-            <video controls>
-                <source src="images/vid1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-
-        <div class="gallery-item">
-            <video controls>
-                <source src="images/vid.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-         </div>
-
-        <div class="gallery-item">
-            <source src="images/vid3.mp4" type="video/mp4" alt="Video 3">
-            <div class="caption">Promotional Video</div>
-        </div>
-
-        <div class="gallery-item">
-            <source src="images/vid4.mp4" type="video/mp4" alt="Video 4">
-            <div class="caption">Non-Linear Interactive Storytelling</div>
-        </div>
-
-        <div class="gallery-item">
-            <source src="images/vid6.mp4" type="video/mp4" alt="Video 6">
-            <div class="caption">Chandelier Design</div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="images/trophy.jpeg" alt="Image 1">
-            <div class="caption">Trophy Design</div>
-        </div>
-
+    <div class="menu">
+      <ul class="menu--wrapper">
+        <li class="menu--item"><a href="graphicdesign.html">Graphic Design</a></li>
+        <li class="menu--item"><a href="illustration.html">Illustration</a></li>
+        <li class="menu--item"><a href="photography.html">Photography</a></li>
+        <li class="menu--item"><a href="modelling.html">Modelling</a></li>
+        <li class="menu--item"><a href="animation.html">Animations</a></li>
+        <li class="menu--item"><a href="videoedit.html">Video Editing</a></li>
+      </ul>
     </div>
 
-    <script src="script.js"></script>
-</body>
+    <script src="js/script5.js"></script>
+    <script src="js/script2.js"></script>
+  </body>
 </html>
