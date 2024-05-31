@@ -38,7 +38,7 @@ body {
     font-family: 'Voyage', serif;
     font-weight: 500;
     text-align: center;
-    font-size: 250%;
+    font-size: 270%;
 }
 
 h3 {
@@ -147,7 +147,6 @@ nav ul li a:hover {
 
 .menu {
     height: 100vh;
-    overflow: hidden;
     background: #da9999;
     cursor: -webkit-grab;
     cursor: grab;
