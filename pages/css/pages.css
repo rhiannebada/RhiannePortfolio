@@ -16,7 +16,6 @@ body {
     height: 100vh;
     overflow: hidden;
     background: #da9999;
-    ;
     color: #fff;
 }
 
@@ -89,7 +88,7 @@ nav ul li a:hover {
     top: 0;
     left: 0;
     width: 100%;
-    font-size: 120px;
+    font-size: 50px;
     line-height: 1.2;
     padding: 2rem 0;
     text-align: center;
