@@ -49,7 +49,7 @@ body {
     font-style: normal;
 }
 
-/* reset margin, padding, and set box sizing for elements */
+/* reset default elements */
 * {
     margin: 0;
     padding: 0;
