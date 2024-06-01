@@ -1,111 +1,123 @@
+/* define custom font "Holipop" */
 @font-face {
-    font-family: 'Voyage';
-    src: url('../fonts/Voyage-regular.otf') format('opentype');
+    font-family: 'Holipop';
+    src: url('../fonts/Holipop.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
+/* hide default cursor for all elements */
 html, body, *, button, a, menu, menu * {
     cursor: none;
 }
 
+/* custom cursor styles */
 .cursor {
     left: 0;
     top: 0;
     width: 15px;
     height: 15px;
-    background-color: rgb(20, 91, 138);
+    background-color: rgb(20, 91, 138); /* cursor color */
     position: absolute;
-    border-radius: 15px;
-    z-index: 10000; 
-    pointer-events: none;
-    transform: translate(-50%, -50%);
+    border-radius: 15px; /* make circular shape */
+    z-index: 10000; /* ensures nav bar is above other contents */
+    pointer-events: none; /* allow pointer events to pass through cursor */
+    transform: translate(-50%, -50%); /* center the cursor in position */
 }
 
+/* follower part of the custom cursor */
 .cursor__follower {
-    transition: transform .4s;
+    transition: transform .4s; /* smooth transition movement */
     width: 6px;
     height: 6px;
     position: absolute;
-    z-index: 9999;
+    z-index: 9999; /* ensure it appears on top but below main cursor*/
     pointer-events: none;
 }
 
+/* global body styles */
 body {
     margin: 20px;
     padding: 0;
-    overflow-y: auto;
-    font-family: 'Voyage', serif;
-    background-color: #da9999;
-    color: #fff;
+    overflow-y: auto; /* enable vertical scrolling */
+    font-family: 'Holipop';
+    background-color: #da9999; /* background color */
+    color: #fff; /* text color */
 }
 
+/* navigation bar styles */
 nav {
-    position: fixed;
+    position: fixed; /* fix navigation part on top */
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100%; /* make it span full width */
     z-index: 1000;
     padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
+    display: flex; /* use flexbox for layout */
+    justify-content: space-between; /* space out the items */
     align-items: center;
 }
 
+/* container for navigation items */
 .nav-container {
-    width: 100%;
+    width: 100%; /* make container full width */
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; /* align items in center */
 }
 
+/* navigation list */
 nav ul {
-    list-style-type: none;
+    list-style-type: none; /* remove default list styling */
     display: flex;
     padding: 0;
     margin: 0;
 }
 
+/* navigation list items */
 nav ul li {
     margin: 0 10px;
 }
 
+/* navigation links */
 nav ul li a {
     display: block;
     color: #fff;
     text-align: center;
     padding: 10px 20px;
-    text-decoration: none;
-    font-size: 1.5vw;
+    text-decoration: none; /* remove underline */
+    font-size: 1.5vw; /* set font size */
 }
 
+/* hover effect for navigation links */
 nav ul li a:hover {
-    background-color: rgb(20, 91, 138, 0.5);
-    border-radius: 5px;
+    color: rgb(20, 91, 138);
 }
 
+/* hamburger menu icon*/
 .menu-icon {
-    display: none;
+    display: none; /* hide by default */
     font-size: 24px;
-    cursor: none;
+    cursor: none; /* hide cursor */
 }
 
+/* responsive styles for smaller screens */
 @media (max-width: 768px) {
     .nav-container {
-        flex-direction: column;
+        flex-direction: column; /* satck items vertically */
     }
 
     .nav-left,
     .nav-right {
-        display: none;
+        display: none; /* hide section by default */
         flex-direction: column;
         width: 100%;
-        background-color: rgb(20, 91, 138, 0.5);
+        background-color: rgb(20, 91, 138, 0.5); /* set background color with low opacity */
     }
 
     .nav-left.active,
     .nav-right.active {
-        display: flex;
+        display: flex; /* show sections when active */
     }
 
     .nav-left li,
@@ -115,56 +127,62 @@ nav ul li a:hover {
     }
 
     .menu-icon {
-        display: block;
+        display: block; /* show menu icon */
         color: white;
         margin-left: 10px;
     }
 }
 
 
-/* ease-up animation */
+/* keyframes for ease-up animation */
 @keyframes easeUp {
     from {
-        opacity: 0;
-        transform: translateY(20px);
+        opacity: 0; /* start with 0 opacity */
+        transform: translateY(20px); /* start downward offset */
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+        opacity: 1; /* end with full opacity */
+        transform: translateY(0); /* end at original position */
     }
 }
 
 /* apply the animation to all text elements */
 .about h2, .about p, .about li {
-    animation: easeUp 1s ease-out;
+    animation: easeUp 1s ease-out; /* ease-up animation */
 }
 
+/* .about section */
 .about {
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* single column by default */
 }
 
+/* .about section headings */
 .about h2 {
     text-align: center;
     padding-bottom: 10px;
-    font-family: 'Voyage', serif;
+    font-family: 'Holipop';
+    font-size: 200%;
 }
 
+/* lists in about page/.about section */
 .about ul {
     padding-left: 20px;
 }
 
+/* paragraphs in about page/.about section*/
 .about p {
     font-family: "Poppins", sans-serif;
     font-weight: 200;
 }
 
+/* responsive styles for larger screens */
 @media screen and (min-width: 768px) {
     .about {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr; /* use two columns */
     }
 
     .about h2 {
@@ -172,70 +190,82 @@ nav ul li a:hover {
     }
 }
 
+/* horizontal rule */
 hr {
-    border: none;
+    border: none; /* remove default border */
 }
 
+/* contact form */
 .contact-form {
     background-color: #f0f0f0;
     padding: 20px;
     padding-right: 40px;
-    border-radius: 10px;
+    border-radius: 10px; /* round corners */
 }
 
+/* contact form headings */
 .contact-form h2 {
     margin-bottom: 20px;
 }
 
+/* form groups in contact form*/
 .form-group {
     margin-bottom: 15px;
 }
 
+/* labels in form groups */
 .form-group label {
     display: block;
     margin-bottom: 5px;
 }
 
+/* input fields and textarea in form groups */
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group textarea {
-    width: 100%;
+    width: 100%; /* make the fields full width */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
 }
 
+/* text area in form groups */
 .form-group textarea {
-    resize: vertical;
+    resize: vertical; /* allow vertical resizing */
 }
 
+/* submit button */
 button[type="submit"] {
     background-color: rgb(20, 91, 138);
     color: white;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
-    cursor: none;
+    cursor: none; /* hide cursor over button*/
     font-family: "Poppins", sans-serif;
     font-weight: 200;
 }
 
+/* hover effect for submit button */
 button[type="submit"]:hover {
-    background-color: #da9999;
+    background-color: #da9999; /* change color on hover */
 }
 
+/* style for labels*/
 label {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif; /* change font */
     font-weight: 200;
     color: rgb(20, 91, 138);
+    font-size: 70%; /* reduces default size */
 }
 
+/* input fields and text area */
 input[type="text"],
 input[type="email"],
 input[type="password"],
 textarea {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif; 
     font-weight: 200;
-    color: #da9999;
+    color: #da9999; /* text color */
 }
