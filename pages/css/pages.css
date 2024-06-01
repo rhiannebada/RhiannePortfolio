@@ -1,6 +1,7 @@
+/* define custom font "Holipop" */
 @font-face {
-    font-family: 'Voyage';
-    src: url('../fonts/Voyage-regular.otf') format('opentype');
+    font-family: 'Holipop';
+    src: url('../fonts/Holipop.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -9,25 +10,27 @@ html, body, *, button, a, menu, menu * {
     cursor: none;
 }
 
+/* custom cursor styles */
 .cursor {
     left: 0;
     top: 0;
     width: 15px;
     height: 15px;
-    background-color: rgb(20, 91, 138);
+    background-color: rgb(20, 91, 138); /* cursor color */
     position: absolute;
-    border-radius: 15px;
-    z-index: 10000; 
-    pointer-events: none;
-    transform: translate(-50%, -50%);
+    border-radius: 15px; /* make circular shape */
+    z-index: 10000; /* ensures nav bar is above other contents */
+    pointer-events: none; /* allow pointer events to pass through cursor */
+    transform: translate(-50%, -50%); /* center the cursor in position */
 }
 
+/* follower part of the custom cursor */
 .cursor__follower {
-    transition: transform .4s;
+    transition: transform .4s; /* smooth transition movement */
     width: 6px;
     height: 6px;
     position: absolute;
-    z-index: 9999;
+    z-index: 9999; /* ensure it appears on top but below main cursor*/
     pointer-events: none;
 }
 
@@ -35,7 +38,7 @@ html, body, *, button, a, menu, menu * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Voyage', serif;
+    font-family: 'Holipop';
 }
 
 body {
@@ -49,48 +52,92 @@ body {
     min-height: 100vh;
 }
 
+/* navigation bar styles */
 nav {
-    position: fixed;
+    position: fixed; /* fix navigation part on top */
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100%; /* make it span full width */
     z-index: 1000;
     padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
+    display: flex; /* use flexbox for layout */
+    justify-content: space-between; /* space out the items */
     align-items: center;
 }
 
+/* container for navigation items */
 .nav-container {
-    width: 100%;
+    width: 100%; /* make container full width */
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; /* align items in center */
 }
 
+/* navigation list */
 nav ul {
-    list-style-type: none;
+    list-style-type: none; /* remove default list styling */
     display: flex;
     padding: 0;
     margin: 0;
 }
 
+/* navigation list items */
 nav ul li {
     margin: 0 10px;
 }
 
+/* navigation links */
 nav ul li a {
     display: block;
     color: #fff;
     text-align: center;
     padding: 10px 20px;
-    text-decoration: none;
-    font-size: 1.5vw;
+    text-decoration: none; /* remove underline */
+    font-size: 1.5vw; /* set font size */
 }
 
+/* hover effect for navigation links */
 nav ul li a:hover {
-    background-color: rgb(20, 91, 138, 0.);
-    border-radius: 5px;
+    color: rgb(20, 91, 138);
+}
+
+/* hamburger menu icon*/
+.menu-icon {
+    display: none; /* hide by default */
+    font-size: 24px;
+    cursor: none; /* hide cursor */
+}
+
+/* responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column; /* satck items vertically */
+    }
+
+    .nav-left,
+    .nav-right {
+        display: none; /* hide section by default */
+        flex-direction: column;
+        width: 100%;
+        background-color: rgb(20, 91, 138, 0.5); /* set background color with low opacity */
+    }
+
+    .nav-left.active,
+    .nav-right.active {
+        display: flex; /* show sections when active */
+    }
+
+    .nav-left li,
+    .nav-right li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-icon {
+        display: block; /* show menu icon */
+        color: white;
+        margin-left: 10px;
+    }
 }
 
 .menu {
@@ -147,12 +194,15 @@ nav ul li a:hover {
     user-select: none;
     font-size: 120px;
     -webkit-appearance: none;
+    -moz-appearance: none; 
+    -ms-appearance: none;
+    appearance: none;
     background: none;
     padding: 0;
     border: none;
     outline: none;
     box-shadow: none;
-    font-family: "Voyage", serif;
+    font-family: 'Holipop';
     cursor: none;
 }
 
@@ -169,113 +219,4 @@ nav ul li a:hover {
 
 .menu--item a:hover {
     color: rgb(20, 91, 138);
-}
-
-.menu-icon {
-    display: none;
-    font-size: 24px;
-    cursor: none;
-}
-
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-    }
-
-    .nav-left,
-    .nav-right {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: rgb(20, 91, 138, 0.5);
-    }
-
-    .nav-left.active,
-    .nav-right.active {
-        display: flex;
-    }
-
-    .nav-left li,
-    .nav-right li {
-        width: 100%;
-        text-align: center;
-    }
-
-    .menu-icon {
-        display: block;
-        color: white;
-        margin-left: 10px;
-    }
-}
-
-.gallery {
-    margin-top: 100px;
-    margin-bottom: 50px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(333px, 1fr));
-    gap: 15px;
-    max-width: 1200px;
-    padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.gallery-item {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 10px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease;
-    border-radius: 10px;
-    box-shadow: 5px;
-}
-
-.gallery-item.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.gallery-item .caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(218, 153, 153);
-    color: white;
-    padding: 10px;
-    box-sizing: border-box;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.gallery-item:hover .caption {
-    opacity: 1;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.1); 
-    object-fit: contain;
-    border-radius: 10px;
-}
-
-@media (max-width: 768px) {
-    .gallery {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-}
-
-@media (max-width: 480px) {
-    .gallery {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
 }
