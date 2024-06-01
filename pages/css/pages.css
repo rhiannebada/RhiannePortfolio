@@ -6,6 +6,7 @@
     font-style: normal;
 }
 
+/* hide default cursor for all elements */
 html, body, *, button, a, menu, menu * {
     cursor: none;
 }
@@ -34,6 +35,7 @@ html, body, *, button, a, menu, menu * {
     pointer-events: none;
 }
 
+/* reset default elements */
 * {
     margin: 0;
     padding: 0;
@@ -41,6 +43,7 @@ html, body, *, button, a, menu, menu * {
     font-family: 'Holipop';
 }
 
+/* body elements */
 body {
     height: 100vh;
     overflow: hidden;
@@ -140,83 +143,68 @@ nav ul li a:hover {
     }
 }
 
+/* menu/options under works page */
 .menu {
     height: 100vh;
     overflow: hidden;
     background: #da9999;
-    cursor: -webkit-grab;
-    cursor: grab;
+    cursor: -webkit-grab; /* grab cursor for WebKit browsers */
+    cursor: grab; /* grab cursor */
 }
 
+/* menu dragging state */
 .menu.is-dragging {
-    cursor: -webkit-grabbing;
-    cursor: grabbing;
+    cursor: -webkit-grabbing; /* grabbing cursor for WebKit browsers */
+    cursor: grabbing; /* grabbing cursor */
 }
 
+/* menu list */
 .menu ul {
-    counter-reset: count;
-    list-style: none;
+    counter-reset: count; /* reset counter */
+    list-style: none; /* remove default list styling */
 }
 
+/* menu items */
 .menu--item {
-    counter-increment: count;
+    counter-increment: count; /* increment counter */
     position: absolute;
-    z-index: 1;
+    z-index: 1; /* layer on top */
     top: 0;
     left: 0;
     width: 100%;
     font-size: 50px;
-    line-height: 1.2;
-    padding: 2rem 0;
+    line-height: 1.2; /* line height */
+    padding: 2rem 0; /* vertical padding */
     text-align: center;
 }
 
-@media (max-width: 767px) {
-    .menu--item {
-        font-size: 10vw;
-        padding: 1rem 0;
-    }
-}
-
+/* display counter for menu items */
 .menu--item:nth-child(n+10):before {
     content: counter(count);
 }
 
+/* menu items link */
 .menu--item a {
     color: #fff;
-    text-decoration: none;
+    text-decoration: none; /* remove underline */
     position: relative;
-    z-index: 1;
-    display: inline-block;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
     font-size: 120px;
-    -webkit-appearance: none;
-    -moz-appearance: none; 
-    -ms-appearance: none;
-    appearance: none;
-    background: none;
-    padding: 0;
-    border: none;
-    outline: none;
-    box-shadow: none;
     font-family: 'Holipop';
     cursor: none;
 }
 
+/* number menu item links */
 .menu--item a:before {
     position: absolute;
-    z-index: -1;
-    top: -24px;
-    left: 0;
-    display: inline-block;
-    transform: translateX(-100%) scale(0.2);
-    content: "0" counter(count);
+    /*z-index: -1;*/
+    /*top: -24px;*/
+    /*left: 0;*/
+    transform: translateX(-100%) scale(0.2); /* transform for counter */
+    content: "0" counter(count); /* display counter with prefix */
     color: rgb(20, 91, 138);
 }
 
+/* hover effect for menu item links */
 .menu--item a:hover {
-    color: rgb(20, 91, 138);
+    color: rgb(20, 91, 138); /* change color */
 }
