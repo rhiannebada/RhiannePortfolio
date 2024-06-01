@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
     // Get all specific image elements
-    const specificImages = document.querySelectorAll('.specific-image'); // Adjust the selector as needed
+    const specificImages = document.querySelectorAll('.specific-image'); 
     
     // Add event listeners for each specific image
     specificImages.forEach(function(image) {
