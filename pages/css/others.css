@@ -1,7 +1,15 @@
+/* reset default elements */
+* {
+    box-sizing: border-box;
+    font-family: 'Holipop';
+}
+
+/* hide default cursor for all elements */
 html, body, *, button, a {
     cursor: none;
 }
 
+/* html and body elements */
 html, body {
     width: 100%;
     height: 100%;
@@ -9,28 +17,41 @@ html, body {
     padding: 0;
 }
 
+/* body elements */
+body {
+    background-color: #da9999;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* minimum height to cover viewport */
+}
+
+/* custom cursor styles */
 .cursor {
     left: 0;
     top: 0;
     width: 15px;
     height: 15px;
-    background-color: rgb(20, 91, 138);
+    background-color: rgb(20, 91, 138); /* cursor color */
     position: absolute;
-    border-radius: 15px;
-    z-index: 10000; 
-    pointer-events: none;
-    transform: translate(-50%, -50%);
+    border-radius: 15px; /* make circular shape */
+    z-index: 10000; /* ensures nav bar is above other contents */
+    pointer-events: none; /* allow pointer events to pass through cursor */
+    transform: translate(-50%, -50%); /* center the cursor in position */
 }
 
+/* follower part of the custom cursor */
 .cursor__follower {
-    transition: transform .4s;
+    transition: transform .4s; /* smooth transition movement */
     width: 6px;
     height: 6px;
     position: absolute;
-    z-index: 9999;
+    z-index: 9999; /* ensure it appears on top but below main cursor*/
     pointer-events: none;
 }
 
+/* define custom font "Holipop" */
 @font-face {
     font-family: 'Holipop';
     src: url('../fonts/Holipop.otf') format('opentype');
@@ -38,95 +59,89 @@ html, body {
     font-style: normal;
 }
 
-* {
-    box-sizing: border-box;
-    font-family: 'Holipop';
-}
-
-body {
-    background-color: #da9999;
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
+/* page label */
 .page a {
     color: rgb(20, 91, 138);
 }
 
+/* hide background color on hover unlike nav links */
 .page a:hover {
-    background-color: rgba(218, 153, 153, 0.0);
+    background-color: rgb(218, 153, 153, 0.0);
 }
 
+/* navigation bar styles */
 nav {
-    position: fixed;
+    position: fixed; /* fix navigation part on top */
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100%; /* make it span full width */
     z-index: 1000;
     padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
+    display: flex; /* use flexbox for layout */
+    justify-content: space-between; /* space out the items */
     align-items: center;
 }
 
+/* container for navigation items */
 .nav-container {
-    width: 100%;
+    width: 100%; /* make container full width */
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; /* align items in center */
 }
 
+/* navigation list */
 nav ul {
-    list-style-type: none;
+    list-style-type: none; /* remove default list styling */
     display: flex;
     padding: 0;
     margin: 0;
 }
 
+/* navigation list items */
 nav ul li {
     margin: 0 10px;
 }
 
+/* navigation links */
 nav ul li a {
     display: block;
     color: #fff;
     text-align: center;
     padding: 10px 20px;
-    text-decoration: none;
-    font-size: 1.5vw;
+    text-decoration: none; /* remove underline */
+    font-size: 1.5vw; /* set font size */
 }
 
+/* hover effect for navigation links */
 nav ul li a:hover {
-    /*background-color: rgb(20, 91, 138, 0.5);*/
     color: rgb(20, 91, 138);
-    /*border-radius: 5px;*/
 }
 
+/* hamburger menu icon*/
 .menu-icon {
-    display: none;
+    display: none; /* hide by default */
     font-size: 24px;
-    cursor: none;
+    cursor: none; /* hide cursor */
 }
 
+/* responsive styles for smaller screens */
 @media (max-width: 768px) {
     .nav-container {
-        flex-direction: column;
+        flex-direction: column; /* satck items vertically */
     }
 
     .nav-left,
     .nav-right {
-        display: none;
+        display: none; /* hide section by default */
         flex-direction: column;
         width: 100%;
-        background-color: rgb(20, 91, 138, 0.5);
+        background-color: rgb(20, 91, 138, 0.5); /* set background color with low opacity */
     }
 
     .nav-left.active,
     .nav-right.active {
-        display: flex;
+        display: flex; /* show sections when active */
     }
 
     .nav-left li,
@@ -136,19 +151,20 @@ nav ul li a:hover {
     }
 
     .menu-icon {
-        display: block;
+        display: block; /* show menu icon */
         color: white;
         margin-left: 10px;
     }
 }
 
-
+/* video element */
 video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100%; /* full width */
+    height: 100%; /* full height */
+    object-fit: cover; /* cover the container */
 }
 
+/* container */
 .container {
     width: 100%;
     height: 100%;
@@ -157,14 +173,16 @@ video {
     padding-bottom: 300px;
 }
 
+/* section */
 section {
-    width: 100%;
-    height: 100vh;
-    display: flex;
+    width: 100%; /* full width */
+    height: 100vh; /* full viewport height */
+    display: flex; /* use flexbox for layout */
     justify-content: center;
     align-items: center;
 }
 
+/* card */
 .card {
     position: relative;
     justify-content: center;
@@ -172,55 +190,62 @@ section {
     margin-bottom: 50px;
 }
 
+/* pinned elements */
 .pinned {
     margin-bottom: 50px;
 }
 
+/* video container */
 .video {
     width: 80%;
     max-width: 1000px;
-    height: auto;
+    height: auto; /* maintain aspect ratio */
     border-radius: 10px;
-    overflow: hidden;
+    overflow: hidden; /* hide overflow */
 }
 
+/* video caption */
 .caption {
     position: absolute;
     top: 10px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* center horizontally */
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
-    opacity: 0; 
-    transition: opacity 0.3s ease;
-    font-size: 120%;
+    opacity: 0; /* initial opacity */
+    transition: opacity 0.3s ease; /* smooth opacity transition */
+    font-size: 120%; /* larger text */
 }
 
+/* show caption on video hover */
 .video:hover .caption {
-    opacity: 1;
+    opacity: 1; /* full opacity */
 }
 
+/* video description */
 .description {
     position: absolute;
     top: 40px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* center horizontally */
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
-    opacity: 0; 
-    transition: opacity 0.3s ease;
+    opacity: 0; /* initial opacity */
+    transition: opacity 0.3s ease; /* smooth opacity transition */
     font-family: "Poppins", sans-serif;
     font-weight: 100;
     font-size: 70%;
     text-align: justify;
 }
 
+/* show description on video hover */
 .video:hover .description {
-    opacity: 1;
+    opacity: 1; /* full opacity */
 }
 
+/* button */
 button {
     background-color: #da9999;
     color: #ffffff;
@@ -230,16 +255,18 @@ button {
     border-radius: 5px;
 }
 
+/* hover effect for buttons */
 button:hover {
     background-color: rgb(20, 91, 138);
     animation: zoom 0.3s forwards;
 }
 
+/* keyframes for zoom animation */
 @keyframes zoom {
     0% {
-        transform: scale(1);
+        transform: scale(1); /* initial scale */
     }
     100% {
-        transform: scale(1.1);
+        transform: scale(1.1); /* initial scale */
     }
 }
