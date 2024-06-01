@@ -1,256 +1,200 @@
+/* hide default cursor for all elements */
 html, body, *, button, a, menu, menu * {
     cursor: none;
 }
 
+/* define custom font "Holipop" */
 @font-face {
-    font-family: 'Voyage';
-    src: url('../fonts/Voyage-regular.otf') format('opentype');
+    font-family: 'Holipop';
+    src: url('../fonts/Holipop.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
+/* reset default elements */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Voyage', serif;
+    font-family: 'Holipop';
+    color: #ffffff;
+    text-decoration: none;
 }
 
+/* body elements */
 body {
-    height: 100vh;
+    height: 100vh; /* full viewport height */
     background: #da9999;
     color: #fff;
     font-weight: 400;
     font-style: normal;
-    background-size: auto;
-    background-position: center;
-    background-repeat: no-repeat;
     margin: 50px;
 }
 
+/* intro section image */
 .intro img {
     margin-left: auto;
     margin-right: auto;
-    margin-top: -50px;
+    margin-top: 130px;
     width: 40%;
     height: auto;
     max-width: 100%;
     display: block;
 }
 
+/* intro section heading */
 .intro h1 {
-    font-family: 'Voyage', serif;
+    font-family: 'Holipop';
     font-weight: 500;
     text-align: center;
-    font-size: 270%;
+    font-size: 450%; /* adjust size larger than normal */
 }
 
+/* h3 heading/s */
 h3 {
-    font-family: 'Voyage', serif;
+    font-family: 'Holipop';
     color: rgba(14, 66, 101);
-}
-
-h3, h4, p {
     text-align: center;
 }
 
-h4 {
-    font-family: "Poppins", sans-serif;
-    font-weight: 200;
+/* paragraph text */
+p {
+    text-align: center;
 }
 
-.buttons {
-    margin: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-}
-
-button {
-    background-color: rgb(20, 91, 138);
-    color: #ffffff;
-    border: none;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 15px;
-}
-
-button:hover {
-    background-color: rgba(14, 66, 101);
-    animation: zoom 0.3s forwards;
-}
-
-@keyframes zoom {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(1.1);
-    }
-}
-
+/* small text in paragraph */
 p small {
     font-family: "Poppins", sans-serif;
     font-weight: 200;
     color: rgb(20, 91, 138);
 }
 
+/* h4 heading/s */
+h4 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    text-align: center;
+}
+
+/* button container */
+.buttons {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* remove default text decoration */
+}
+
+/* buttons */
+button {
+    background-color: rgb(20, 91, 138);
+    color: #ffffff;
+    border: none; /* remove border */
+    padding: 10px;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+/* hover effect for buttons */
+button:hover {
+    background-color: rgba(14, 66, 101); /* change color */
+    animation: zoom 0.3s forwards; /* zoom effect */
+}
+
+/* keyframes for zoom animation */
+@keyframes zoom {
+    0% {
+        transform: scale(1); /* initial scale*/
+    }
+    100% {
+        transform: scale(1.1); /* final scale */
+    }
+}
+
+/* about section */
 .about {
     text-align: left;
     margin: 50px;
 }
 
+/* justify paragraph text in about section */
 .about p {
     text-align: justify;
 }
 
+/* navigation bar styles */
 nav {
-    position: fixed;
+    position: fixed; /* fix navigation part on top */
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100%; /* make it span full width */
     z-index: 1000;
     padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
+    display: flex; /* use flexbox for layout */
+    justify-content: space-between; /* space out the items */
     align-items: center;
 }
 
+/* container for navigation items */
 .nav-container {
-    width: 100%;
+    width: 100%; /* make container full width */
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; /* align items in center */
 }
 
+/* navigation list */
 nav ul {
-    list-style-type: none;
+    list-style-type: none; /* remove default list styling */
     display: flex;
     padding: 0;
     margin: 0;
 }
 
+/* navigation list items */
 nav ul li {
     margin: 0 10px;
 }
 
+/* navigation links */
 nav ul li a {
     display: block;
     color: #fff;
     text-align: center;
     padding: 10px 20px;
-    text-decoration: none;
-    font-size: 1.5vw;
+    text-decoration: none; /* remove underline */
+    font-size: 1.5vw; /* set font size */
 }
 
+/* hover effect for navigation links */
 nav ul li a:hover {
-    background-color: rgb(20, 91, 138, 0.5);
-    border-radius: 5px;
-}
-
-.menu {
-    height: 100vh;
-    background: #da9999;
-    cursor: -webkit-grab;
-    cursor: grab;
-}
-
-.menu.is-dragging {
-    cursor: -webkit-grabbing;
-    cursor: grabbing;
-}
-
-.menu ul {
-    counter-reset: count;
-    list-style: none;
-}
-
-.menu--item {
-    counter-increment: count;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    font-size: 120px;
-    line-height: 1.2;
-    padding: 2rem 0;
-    text-align: center;
-}
-
-@media (max-width: 767px) {
-    .menu--item {
-        font-size: 10vw;
-        padding: 1rem 0;
-    }
-}
-
-.menu--item:nth-child(n+10):before {
-    content: counter(count);
-}
-
-.menu--item a {
-    color: #fff;
-    text-decoration: none;
-    position: relative;
-    z-index: 1;
-    display: inline-block;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    font-size: 120px;
-    -webkit-appearance: none;
-    background: none;
-    padding: 0;
-    border: none;
-    outline: none;
-    box-shadow: none;
-    color: #ffffff;
-    font-family: "Voyage", serif;
-    cursor: none;
-}
-
-@media (max-width: 767px) {
-    .menu--item a {
-        font-size: 10vw;
-    }
-}
-
-.menu--item a:before {
-    position: absolute;
-    z-index: -1;
-    top: -24px;
-    left: 0;
-    display: inline-block;
-    transform: translateX(-100%) scale(0.2);
-    content: "0" counter(count);
     color: rgb(20, 91, 138);
 }
 
+/* hamburger menu icon*/
 .menu-icon {
-    display: none;
+    display: none; /* hide by default */
     font-size: 24px;
-    cursor: none;
+    cursor: none; /* hide cursor */
 }
 
+/* responsive styles for smaller screens */
 @media (max-width: 768px) {
     .nav-container {
-        flex-direction: column;
+        flex-direction: column; /* satck items vertically */
     }
 
     .nav-left,
     .nav-right {
-        display: none;
+        display: none; /* hide section by default */
         flex-direction: column;
         width: 100%;
-        background-color: rgba(20, 91, 138, 0.5);
+        background-color: rgb(20, 91, 138, 0.5); /* set background color with low opacity */
     }
 
     .nav-left.active,
     .nav-right.active {
-        display: flex;
+        display: flex; /* show sections when active */
     }
 
     .nav-left li,
@@ -260,57 +204,32 @@ nav ul li a:hover {
     }
 
     .menu-icon {
-        display: block;
+        display: block; /* show menu icon */
         color: white;
         margin-left: 10px;
     }
 }
 
-.nav-links {
-    display: flex;
-}
-
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: rgb(20, 91, 138, 0.5);
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links li {
-        width: 100%;
-        text-align: center;
-    }
-}
-
-* {
-    color: #ffffff;
-    text-decoration: none;
-}
-
+/* custom cursor styles */
 .cursor {
-  left: 0;
-  top: 0;
-  width: 15px;
-  height: 15px;
-  background-color: rgb(20, 91, 138);
-  position: absolute;
-  border-radius: 15px;
-  z-index: 10000; 
-  pointer-events: none;
-  transform: translate(-50%, -50%);
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background-color: rgb(20, 91, 138); /* cursor color */
+    position: absolute;
+    border-radius: 15px; /* make circular shape */
+    z-index: 10000; /* ensures nav bar is above other contents */
+    pointer-events: none; /* allow pointer events to pass through cursor */
+    transform: translate(-50%, -50%); /* center the cursor in position */
 }
 
+/* follower part of the custom cursor */
 .cursor__follower {
-  transition: transform .4s;
-  width: 6px;
-  height: 6px;
-  position: absolute;
-  z-index: 9999;
-  pointer-events: none;
+    transition: transform .4s; /* smooth transition movement */
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    z-index: 9999; /* ensure it appears on top but below main cursor*/
+    pointer-events: none;
 }
