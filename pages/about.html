@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>About</title> <!--page title-->
     <link rel="stylesheet" href="css/about.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Buda:wght@300&family=Explora&family=Felipa&family=Fredericka+the+Great&family=Heebo:wght@100..900&family=Marcellus&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
+    <!--navigation section-->
     <header>
         <nav>
             <div class="nav-container">
-                <div class="menu-icon" id="menu-icon">☰</div>
-                <ul class="nav-left" id="nav-left">
+                <div class="menu-icon" id="menu-icon">☰</div> <!--menu icon-->
+                <ul class="nav-left" id="nav-left"> <!--left side of navigation bar-->
                     <li><a href="home.html">Home</a></li>
                 </ul>
-                <ul class="nav-right" id="nav-right">
+                <ul class="nav-right" id="nav-right"> <!--right side of navigation bar-->
                     <li><a href="works.html">Works</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
@@ -25,70 +25,76 @@
         </nav>
     </header>
 
-    <br>
-    <br>
-    <br>
-    <br>
+    <br><br><br><br> <!--spacing-->
     
+    <!--about section-->
     <div class="about">
-    <h2>Profile</h2>
-        <p>Hi! I'm Rhianne, 19, an enthusiastic and driven Creative Computing student at Bath Spa University. I'm passionate about design and illustrations, and I'm dedicated to learn and grow in this dynamic field.</p>
+        <!--profile section-->
+        <h2>Profile</h2>
+            <p>Hi! I'm Rhianne, 19, an enthusiastic and driven Creative Computing student at Bath Spa University. I'm passionate about design and illustrations, and I'm dedicated to learn and grow in this dynamic field.</p>
     
-    <br><br>
-    <hr>
+        <br><br>
+        <hr>
 
-    <h2>Experience</h2>
-        <p>I am 1 year in, working as a Graphic Designer and Digital Marketer student intern in my university. I manage the institute's social media platforms, responsible for content planning and creation, and assists in corporate events.</p>
+        <!--experience section-->
+        <h2>Experience</h2>
+            <p>I am 1 year in, working as a Graphic Designer and Digital Marketer student intern in my university. I manage the institute's social media platforms, responsible for content planning and creation, and assists in corporate events.</p>
 
-    <br><br>
-    <hr>
+        <br><br>
+        <hr>
 
-    <h2>Skills</h2>
-        <ul>
-            <li><p>I forte in digital and traditional illustration, and proficient in graphic designing.</p></li>
-            <li><p>I have good collaboration skills.</p></li>
-            <li><p>I am a quick learner, open-minded, and adaptable.</p></li>
-            <li><p>I am experienced with various social media platforms (Instagram, Facebook, YouTube, LinkedIn, TikTok, Meta Business Suite).</p></li>
-        </ul>
-    <br><br>
-    <hr>
+        <!--skills section-->
+        <h2>Skills</h2>
+            <ul>
+                <li><p>I forte in digital and traditional illustration, and proficient in graphic designing.</p></li>
+                <li><p>I have good collaboration skills.</p></li>
+                <li><p>I am a quick learner, open-minded, and adaptable.</p></li>
+                <li><p>I am experienced with various social media platforms (Instagram, Facebook, YouTube, LinkedIn, TikTok, Meta Business Suite).</p></li>
+            </ul>
+
+        <br><br>
+        <hr>
+        
+        <!--tools section-->
+        <h2>Tools</h2>
+            <ul>
+                <li><p>Canva and Figma for fast designs and moodboards.</p></li>
+                <li><p>Adobe Photoshop, Adobe Illustrator and Adobe InDesign for professional works.</p></li>
+                <li><p>CapCut for video editing.</p></li>
+            </ul>
     
-    <h2>Tools</h2>
-        <ul>
-            <li><p>Canva and Figma for fast designs and moodboards.</p></li>
-            <li><p>Adobe Photoshop, Adobe Illustrator and Adobe InDesign for professional works.</p></li>
-            <li><p>CapCut for video editing.</p></li>
-        </ul>
-    
-    <br><br><br>
-    <hr>
+        <br><br><br>
+        <hr>
 
-    <h2>Contact Me</h2>
-    <div class="contact-form">
-        <form id="contact-form" action="https://formspree.io/f/mvoejzvw" method="POST">
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="subject">Subject:</label>
-                <input type="text" id="subject" name="subject">
-            </div>
-            <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-            </div>
-            <button type="submit">Submit</button>
-        </form>
-    </div>
+        <!--contact me section-->
+        <h2>Contact Me</h2>
+        <div class="contact-form">
+            <!--contact form using third party service for data submission-->
+            <form id="contact-form" action="https://formspree.io/f/mvoejzvw" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     <br><br>
     
-    <script src="js/script2.js"></script>
-    <script src="js/script6.js"></script>
+<!--external js files-->
+<script src="js/script2.js"></script>
+<script src="js/script6.js"></script>
 
 </body>
 </html>
