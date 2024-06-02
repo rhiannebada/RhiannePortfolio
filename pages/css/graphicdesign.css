@@ -72,7 +72,7 @@ body {
     margin-top: 100px;
     margin-bottom: 50px;
     display: grid; /* grid layout */
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* grid layout with flexible columns */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* grid layout with flexible columns */
     gap: 15px; /* gap between grid items */
     max-width: 1200px;
     padding: 20px;
@@ -133,19 +133,7 @@ body {
     border-radius: 10px; /* round corners */
 }
 
-/* responsive styles for smaller screens */
-@media (max-width: 768px) {
-    .gallery {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* adjust grid layout */
-    }
-}
 
-/* repsonsive styles for very small screens */
-@media (max-width: 480px) {
-    .gallery {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-}
 
 /* navigation bar styles */
 nav {
