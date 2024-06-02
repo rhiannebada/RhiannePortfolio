@@ -133,7 +133,19 @@ body {
     border-radius: 10px; /* round corners */
 }
 
+/* responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* adjust grid layout */
+    }
+}
 
+/* repsonsive styles for very small screens */
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
 
 /* navigation bar styles */
 nav {
