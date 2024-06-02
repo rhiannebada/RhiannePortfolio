@@ -1,13 +1,14 @@
-//background changing
+// background color change
+
 document.addEventListener("DOMContentLoaded", function() {
-    // Define mappings between images and colors
+    // define mappings between image sources and background colors
     const imageColorMap = {
-        'images/m15.JPG': '#573e2b', // Map image to color (adjust as needed)
-        'images/m16.JPG': '#573e2b', // Map another image to another color
+        'images/m15.JPG': '#573e2b', // map the image source to a specific color
+        'images/m16.JPG': '#573e2b', 
         'images/m17.JPG': '#573e2b',
         'images/m19.JPG': '#573e2b',
 
-        'images/m20.JPG': '#e0b12d',
+        'images/m20.JPG': '#e0b12d', // map another image to another color
         'images/m21.JPG': '#e0b12d',
         'images/m23.JPG': '#e0b12d',
         'images/m24.JPG': '#e0b12d',
@@ -22,22 +23,22 @@ document.addEventListener("DOMContentLoaded", function() {
         'images/m13.JPG': '#244254',
     };
 
-    // Get all specific image elements
+    // get all specific image elements
     const specificImages = document.querySelectorAll('.specific-image'); 
     
-    // Add event listeners for each specific image
+    // add event listeners for each specific image
     specificImages.forEach(function(image) {
-        // Add event listener for mouseenter
+        // add event listener for mouseenter
         image.addEventListener('mouseenter', function() {
-            // Get the corresponding color from the map
+            // get the corresponding color from the image color map
             const color = imageColorMap[image.getAttribute('src')];
-            // Change the body background color
+            // change the body background color
             document.body.style.backgroundColor = color;
         });
 
-        // Add event listener for mouseleave
+        // add event listener for mouseleave
         image.addEventListener('mouseleave', function() {
-            // Reset the body background color
+            // reset the body background color to default
             document.body.style.backgroundColor = '';
         });
     });
